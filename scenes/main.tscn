@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://buief1p8tb87h"]
+[gd_scene load_steps=6 format=4 uid="uid://buief1p8tb87h"]
 
 [ext_resource type="PackedScene" uid="uid://bm0kkvh6lrod2" path="res://characters/Player/player.tscn" id="1_kk044"]
 [ext_resource type="Script" path="res://scenes/scene.gd" id="1_qtr61"]
+[ext_resource type="Texture2D" uid="uid://dt3i5ltd2aiqb" path="res://scenes/room1/room1_tileset.png" id="3_ekrb7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bdrd0"]
+texture = ExtResource("3_ekrb7")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rqx5x"]
+sources/0 = SubResource("TileSetAtlasSource_bdrd0")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_qtr61")
 
 [node name="Player" parent="." instance=ExtResource("1_kk044")]
+z_index = 1
+speed = 100
+
+[node name="floor" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_rqx5x")
