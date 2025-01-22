@@ -1,0 +1,1 @@
+Notifications appear as movable windows. 
