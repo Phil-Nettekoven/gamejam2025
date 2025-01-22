@@ -24,8 +24,6 @@ sources/0 = SubResource("TileSetAtlasSource_bdrd0")
 script = ExtResource("1_qtr61")
 
 [node name="Player" parent="." instance=ExtResource("1_kk044")]
-z_index = 1
-position = Vector2(-8, 6)
 
 [node name="floor" type="TileMapLayer" parent="."]
 texture_filter = 1
