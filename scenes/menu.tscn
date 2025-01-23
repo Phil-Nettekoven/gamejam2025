@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh4apy2cdk1x7"]
+
+[ext_resource type="Script" path="res://scenes/menu_root.gd" id="1_grpjm"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MenuRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_grpjm")
+
+[node name="MainMenu" type="MarginContainer" parent="MenuRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="MenuRoot/MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuRoot/MainMenu/BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuRoot/MainMenu/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "7h3_w34p0n
+"
+
+[node name="New Game" type="Button" parent="MenuRoot/MainMenu/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "new game"
+flat = true
+alignment = 0
+
+[node name="Load Save" type="Button" parent="MenuRoot/MainMenu/BoxContainer/VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "load save"
+flat = true
+alignment = 0
+
+[node name="Settings" type="Button" parent="MenuRoot/MainMenu/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "settings"
+flat = true
+alignment = 0
+
+[node name="Quit" type="Button" parent="MenuRoot/MainMenu/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "quit"
+flat = true
+alignment = 0
+
+[node name="Settings" type="MarginContainer" parent="MenuRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1920.0
+offset_right = -1920.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="MenuRoot/Settings"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuRoot/Settings/BoxContainer"]
+layout_mode = 2
+
+[node name="a" type="Label" parent="MenuRoot/Settings/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "a"
+
+[node name="Back" type="Button" parent="MenuRoot/Settings/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "back"
+flat = true
+
+[connection signal="pressed" from="MenuRoot/MainMenu/BoxContainer/VBoxContainer/New Game" to="MenuRoot" method="_on_new_game_pressed"]
+[connection signal="pressed" from="MenuRoot/MainMenu/BoxContainer/VBoxContainer/Settings" to="MenuRoot" method="_on_settings_pressed"]
+[connection signal="pressed" from="MenuRoot/MainMenu/BoxContainer/VBoxContainer/Quit" to="MenuRoot" method="_on_quit_pressed"]
+[connection signal="pressed" from="MenuRoot/Settings/BoxContainer/VBoxContainer/Back" to="MenuRoot" method="_on_back_pressed"]
