@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=4 uid="uid://buief1p8tb87h"]
+
+[ext_resource type="Script" path="res://scenes/scene.gd" id="1_g837f"]
+[ext_resource type="PackedScene" uid="uid://bm0kkvh6lrod2" path="res://characters/player/player.tscn" id="2_blt1p"]
+[ext_resource type="Texture2D" uid="uid://on1oux8nauij" path="res://scenes/room1/room1_tileset_2.png" id="3_5uasj"]
+[ext_resource type="PackedScene" uid="uid://coaoxsu3qpc7f" path="res://objects/shower/shower.tscn" id="4_ipd6l"]
+[ext_resource type="PackedScene" uid="uid://n473dws7ahd5" path="res://objects/fridge/fridge.tscn" id="5_th8ji"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsfr3"]
+texture = ExtResource("3_5uasj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.0271, 16, -16, 16, -16, -16, 16, -16, 16, -12.0271, -11.8999, -12.0271)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -11.8793, -16, -16, 16, -16, 16, -11.8793)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12.0271, -16, -16, 16, -16, 16, 16, 12.0271, 16, 12.0271, -11.8999)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 12.0271, 16, 16, -16, 16, -16, -16, -12.0271, -16, -12.0271, 11.8999)
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 11.8793, -16, 16, 16, 16, 16, 11.8793)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.0271, -16, 16, -16, 16, 16, -16, 16, -16, 12.0271, 11.8999, 12.0271)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(11.6093, -16, 16, -16, 16, 16, 11.9635, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.6093, -16, -16, -16, -16, 16, -11.9635, 16)
+
+[sub_resource type="TileSet" id="TileSet_7ab43"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dsfr3")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_g837f")
+
+[node name="Player" parent="." instance=ExtResource("2_blt1p")]
+z_as_relative = false
+position = Vector2(-15, -20)
+
+[node name="structures" type="TileMapLayer" parent="."]
+z_index = 1
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD9//7/AAAAAAAAAAABAP7/AAACAAAAAAABAAAAAAACAAIAAAD9/wAAAAAAAAIAAAABAP3/AAACAAIAAAD///3/AAAAAAIAAAD///z/AAAAAAAAAAABAPz/AAACAAAAAAAAAPz/AAABAAAAAAAAAAAAAAABAAIAAAD//wAAAAABAAIAAAD+/wAAAAABAAIAAAD9////AAAAAAEAAAABAP//AAACAAEAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_7ab43")
+
+[node name="Shower" parent="." instance=ExtResource("4_ipd6l")]
+position = Vector2(16, -108)
+
+[node name="Fridge" parent="." instance=ExtResource("5_th8ji")]
+position = Vector2(48, 14)
