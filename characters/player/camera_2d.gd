@@ -7,7 +7,7 @@ extends Camera2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-func get_input():
+func get_input() -> void:
 	var mod: float = 0.0
 	
 	if Input.is_action_pressed("zoomin"):

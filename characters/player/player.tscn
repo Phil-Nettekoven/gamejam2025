@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm0kkvh6lrod2"]
+[gd_scene load_steps=7 format=3 uid="uid://bm0kkvh6lrod2"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_sooym"]
-[ext_resource type="Texture2D" uid="uid://tmn5m11v23ba" path="res://characters/player/player_spritesheet.png" id="2_52lgi"]
+[ext_resource type="Texture2D" uid="uid://cvkgiwlmqj0dq" path="res://characters/blank32x32.png" id="2_8tun0"]
+[ext_resource type="Texture2D" uid="uid://dff70hc8mrcoh" path="res://characters/npc.png" id="2_qqapq"]
 [ext_resource type="Script" path="res://characters/player/player_sprite.gd" id="3_ugirx"]
 [ext_resource type="Script" path="res://characters/player/camera_2d.gd" id="3_wptio"]
 
@@ -9,15 +10,15 @@
 height = 36.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_sooym")
 speed = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_52lgi")
-hframes = 10
-vframes = 10
+texture = ExtResource("2_8tun0")
 script = ExtResource("3_ugirx")
+spritesheet = ExtResource("2_qqapq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(8, 8)
